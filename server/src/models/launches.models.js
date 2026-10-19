@@ -138,6 +138,7 @@ async function abortLaunch(id) {
 }
 
 module.exports = {
+    loadLaunchesData,
     getLaunches,
     createNewLaunch,
     launchIdExists,
