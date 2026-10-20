@@ -86,8 +86,11 @@ async function getLaunch(flightNumber) {
     );
 }
 
-async function getLaunches() {
+async function getLaunches(skip, limit) {
     return await launches.find({}, { '_id': 0, '__v': 0 })
+    .sort({ flightNumber: 1 })
+    .skip(skip)
+    .limit(limit);
 }
 
 async function upsertLaunch(launch) {
